@@ -9,9 +9,9 @@ import {
   Bookmark,
   FileText,
   Settings,
-  Wallet,
   Home,
 } from "lucide-react";
+import { BrandLogo } from "@/components/brand-logo";
 import { cn } from "@/lib/utils";
 
 const nav = [
@@ -29,10 +29,7 @@ export function DashboardSidebar() {
   return (
     <aside className="hidden w-64 shrink-0 flex-col border-r border-sidebar-border bg-sidebar lg:flex">
       <div className="flex h-16 items-center gap-2 border-b border-sidebar-border px-6">
-        <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-primary text-primary-foreground">
-          <Wallet className="h-5 w-5" />
-        </span>
-        <span className="text-lg font-bold tracking-tight text-sidebar-foreground">Affordit</span>
+        <BrandLogo size="lg" className="[&>span:last-child]:text-sidebar-foreground" />
       </div>
 
       <nav className="flex flex-1 flex-col gap-1 p-4">

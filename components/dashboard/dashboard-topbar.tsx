@@ -13,6 +13,7 @@ import {
   FileText,
   Settings,
 } from "lucide-react";
+import { BrandLogo } from "@/components/brand-logo";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
@@ -44,9 +45,7 @@ export function DashboardTopbar() {
       <div className="flex h-16 items-center justify-between gap-4 px-4 sm:px-6">
         <div className="flex items-center gap-3">
           <Link href="/dashboard" className="flex items-center gap-2 lg:hidden">
-            <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-primary-foreground text-sm font-bold">
-              A
-            </span>
+            <BrandLogo showText={false} />
           </Link>
           <h1 className="text-lg font-bold tracking-tight text-foreground">{title}</h1>
         </div>

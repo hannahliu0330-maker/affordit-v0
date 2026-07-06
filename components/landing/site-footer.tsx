@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Wallet } from "lucide-react";
+import { BrandLogo } from "@/components/brand-logo";
 
 const columns = [
   {
@@ -23,10 +23,7 @@ export function SiteFooter() {
         <div className="grid gap-10 md:grid-cols-4">
           <div>
             <Link href="/" className="flex items-center gap-2">
-              <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-primary text-primary-foreground">
-                <Wallet className="h-5 w-5" />
-              </span>
-              <span className="text-xl font-bold tracking-tight text-foreground">Affordit</span>
+              <BrandLogo />
             </Link>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-muted-foreground">
               Spend smarter, invest better. A smart finance platform for young adults.
