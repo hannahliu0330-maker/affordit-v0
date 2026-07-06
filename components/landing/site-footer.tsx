@@ -4,15 +4,31 @@ import { BrandLogo } from "@/components/brand-logo";
 const columns = [
   {
     title: "Product",
-    links: ["How it works", "Budgeting", "AI Insights", "Security"],
+    links: [
+      { label: "How it works", href: "/#how-it-works" },
+      { label: "Budgeting", href: "/budgeting" },
+      { label: "AI Insights", href: "/ai-insights" },
+      { label: "Security", href: "/security" },
+      { label: "Pricing", href: "/pricing" },
+    ],
   },
   {
     title: "Resources",
-    links: ["Learn", "Glossary", "Blog", "Help center"],
+    links: [
+      { label: "Learn", href: "#" },
+      { label: "Glossary", href: "#" },
+      { label: "Blog", href: "#" },
+      { label: "Help center", href: "#" },
+    ],
   },
   {
     title: "Company",
-    links: ["About", "Careers", "Privacy", "Terms"],
+    links: [
+      { label: "About", href: "#" },
+      { label: "Careers", href: "#" },
+      { label: "Privacy", href: "#" },
+      { label: "Terms", href: "#" },
+    ],
   },
 ];
 
@@ -35,13 +51,13 @@ export function SiteFooter() {
               <p className="text-sm font-semibold text-foreground">{col.title}</p>
               <ul className="mt-4 space-y-3">
                 {col.links.map((link) => (
-                  <li key={link}>
-                    <a
-                      href="#"
+                  <li key={link.label}>
+                    <Link
+                      href={link.href}
                       className="text-sm text-muted-foreground transition-colors hover:text-foreground"
                     >
-                      {link}
-                    </a>
+                      {link.label}
+                    </Link>
                   </li>
                 ))}
               </ul>
