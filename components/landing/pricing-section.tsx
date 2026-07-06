@@ -23,7 +23,7 @@ const plans = [
   {
     name: "AffordIt Premium",
     audience: "Investment education and personalized insights",
-    price: "$6.99",
+    price: "$16.99",
     period: "/month",
     yearly: "$59/year",
     icon: Sparkles,
