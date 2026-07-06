@@ -1,5 +1,7 @@
-import { LineChart, Layers, ShieldAlert, HeartPulse } from "lucide-react";
+import Link from "next/link";
+import { LineChart, Layers, ShieldAlert, HeartPulse, Sparkles, ArrowRight } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { StatCard } from "@/components/dashboard/stat-card";
 import { NetWorthChart } from "@/components/dashboard/charts";
@@ -18,6 +20,29 @@ export default function InvestmentsPage() {
 
   return (
     <div className="space-y-6">
+      <Card className="border-brand-purple/30 bg-brand-purple/5">
+        <CardContent className="flex flex-col gap-4 p-5 sm:flex-row sm:items-center sm:justify-between">
+          <div className="flex gap-3">
+            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-brand-purple/12 text-brand-purple">
+              <Sparkles className="h-5 w-5" />
+            </span>
+            <div>
+              <p className="text-sm font-semibold text-foreground">Premium investment insights</p>
+              <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
+                Upgrade for educational investment insights, risk level analysis, news impact
+                explanations, and beginner-friendly recommendations.
+              </p>
+            </div>
+          </div>
+          <Button asChild className="w-full rounded-full sm:w-auto">
+            <Link href="/pricing">
+              View pricing
+              <ArrowRight className="ml-1 h-4 w-4" />
+            </Link>
+          </Button>
+        </CardContent>
+      </Card>
+
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         <StatCard label="Portfolio value" value={`$${total.toLocaleString(undefined, { maximumFractionDigits: 0 })}`} delta="1.8%" positive icon={LineChart} tone="blue" />
         <StatCard label="Holdings" value={String(holdings.length)} icon={Layers} tone="purple" />

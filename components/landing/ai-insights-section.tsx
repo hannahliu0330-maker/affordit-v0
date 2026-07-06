@@ -1,4 +1,6 @@
-import { Upload, BrainCircuit, BarChart3, Bookmark, LineChart, Info } from "lucide-react";
+import Link from "next/link";
+import { Upload, BrainCircuit, BarChart3, Bookmark, LineChart, Info, ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const steps = [
   {
@@ -45,8 +47,8 @@ export function AiInsightsSection() {
             Turn headlines into educational market analysis
           </h2>
           <p className="mt-4 text-pretty text-muted-foreground">
-            Affordit reads the news with you and explains the potential market impact in plain
-            language.
+            AffordIt Premium reads the news with you and explains the potential market impact in
+            plain language through educational investment insights.
           </p>
         </div>
 
@@ -78,9 +80,15 @@ export function AiInsightsSection() {
             <Info className="h-6 w-6 text-brand-purple" />
             <p className="mt-3 text-sm font-semibold text-foreground">Educational, not advice</p>
             <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
-              Stock insights are presented as educational market analysis to help you learn — not
-              guaranteed financial advice. Always do your own research.
+              Stock insights are presented as educational market analysis to help you learn, not
+              professional financial advice.
             </p>
+            <Button asChild size="sm" className="mt-4 w-fit rounded-full">
+              <Link href="/pricing">
+                View Premium
+                <ArrowRight className="ml-1 h-4 w-4" />
+              </Link>
+            </Button>
           </div>
         </div>
       </div>
