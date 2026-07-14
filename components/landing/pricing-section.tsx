@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowRight, Check, GraduationCap, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { PremiumUpgradeButton } from "@/components/subscription/premium-upgrade-button";
 
 const plans = [
   {
@@ -100,12 +101,18 @@ export function PricingSection() {
               {plan.yearly && (
                 <p className="mt-1 text-sm font-semibold text-brand-green">{plan.yearly}</p>
               )}
-              <Button asChild className="mt-6 w-full rounded-full">
-                <Link href="/dashboard">
+              {plan.featured ? (
+                <PremiumUpgradeButton className="mt-6 w-full rounded-full">
                   {plan.cta}
-                  <ArrowRight className="ml-1 h-4 w-4" />
-                </Link>
-              </Button>
+                </PremiumUpgradeButton>
+              ) : (
+                <Button asChild className="mt-6 w-full rounded-full">
+                  <Link href="/dashboard">
+                    {plan.cta}
+                    <ArrowRight className="ml-1 h-4 w-4" />
+                  </Link>
+                </Button>
+              )}
               <ul className="mt-6 space-y-3 border-t border-border pt-6">
                 {plan.features.map((feature) => (
                   <li key={feature} className="flex gap-2 text-sm text-muted-foreground">

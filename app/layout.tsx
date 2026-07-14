@@ -2,6 +2,7 @@ import React from "react"
 import type { Metadata, Viewport } from 'next'
 import { Instrument_Sans, JetBrains_Mono } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
+import { SubscriptionProvider } from '@/components/subscription/subscription-provider'
 import './globals.css'
 
 const instrumentSans = Instrument_Sans({
@@ -33,7 +34,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="bg-background">
       <body className={`${instrumentSans.variable} ${jetbrainsMono.variable} font-sans antialiased`}>
-        {children}
+        <SubscriptionProvider>{children}</SubscriptionProvider>
         <Analytics />
       </body>
     </html>
