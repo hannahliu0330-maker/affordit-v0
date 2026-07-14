@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Switch } from "@/components/ui/switch";
 import { Separator } from "@/components/ui/separator";
+import { DemoPlanToggle } from "@/components/subscription/demo-plan-toggle";
 
 const manualAccounts = [
   { name: "Student checking", type: "Manual account", status: "Not connected" },
@@ -144,6 +145,15 @@ export default function SettingsPage() {
             <Button variant="outline">Change password</Button>
             <Button variant="outline" className="text-destructive">Delete account</Button>
           </div>
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader>
+          <CardTitle className="text-sm text-muted-foreground">Presenter controls</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <DemoPlanToggle />
         </CardContent>
       </Card>
     </div>

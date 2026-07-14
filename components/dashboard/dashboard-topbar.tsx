@@ -14,6 +14,7 @@ import {
   Settings,
 } from "lucide-react";
 import { BrandLogo } from "@/components/brand-logo";
+import { PlanBadge } from "@/components/subscription/plan-badge";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
@@ -51,6 +52,7 @@ export function DashboardTopbar() {
         </div>
 
         <div className="flex items-center gap-2 sm:gap-3">
+          <PlanBadge />
           <div className="relative hidden sm:block">
             <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
             <Input placeholder="Search stocks..." className="w-48 rounded-full pl-9 md:w-56" />
